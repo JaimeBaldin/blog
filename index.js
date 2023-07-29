@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import connection from "./database/database.js";
 
 
 const app = express();
@@ -13,6 +14,15 @@ app.use(express.static("public"));
 //Body Parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+//Database connection
+connection.authenticate()
+    .then(() =>{
+        console.log("Conexão feita com sucesso");
+    })
+    .catch(error =>{
+        console.log(error);
+    });
 
 app.get("/", (req,res)=> {
     res.send("Bem vindo")
