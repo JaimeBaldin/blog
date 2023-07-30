@@ -2,6 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import connection from "./database/database.js";
 import CategoriesController from "./categories/CategoriesController.js";
+import ArticlesController from "./articles/ArticlesController.js";
+
+
 
 
 const app = express();
@@ -27,12 +30,10 @@ connection.authenticate()
 
 
 
+//Rotas - Controllers    
+
 app.use("/", CategoriesController);
-
-
-
-
-
+app.use("/", ArticlesController);
 
 
 
