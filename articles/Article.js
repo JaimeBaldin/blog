@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
-import connection from "./database/database.js";
+import connection from "../database/database.js";
+import Category from "../categories/Category.js";
 
 const Article = connection.define('articles', {
     title: {
@@ -13,5 +14,12 @@ const Article = connection.define('articles', {
         allowNull: false
     }    
 })
+
+Category.hasMany(Article);
+Article.belongsTo(Category);
+
+
+
+
 
 export default Article;

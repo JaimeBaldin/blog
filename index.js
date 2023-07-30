@@ -1,8 +1,14 @@
 import express from "express";
 import bodyParser from "body-parser";
 import connection from "./database/database.js";
+
 import CategoriesController from "./categories/CategoriesController.js";
 import ArticlesController from "./articles/ArticlesController.js";
+
+import Article from "./articles/Article.js";
+import Category from "./categories/Category.js";
+
+
 
 
 
