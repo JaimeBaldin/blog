@@ -45,8 +45,8 @@ app.use("/", ArticlesController);
 
 
 
-app.get("/", (req,res)=> {
-    res.send("Bem vindo")
+app.get('/', (req,res)=> {
+    res.send("views/index.ejs")
 })
 
 app.listen(8080,() =>{
