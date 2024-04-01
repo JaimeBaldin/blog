@@ -22,4 +22,11 @@ router.post("/catgories/save", (req, res) => {
     }
 });
 
+router.get("/admin/categories", (req, res) => {
+    Category.findAll().then(categories => {
+        res.render("admin/categories/index", { categories: categories });
+    });
+});
+
+
 export default router;
